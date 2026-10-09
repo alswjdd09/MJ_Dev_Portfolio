@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>932</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>900</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Robot Sensor &amp; Motion Control Dashboard</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_main">
+    <item>
+     <widget class="QLabel" name="lblTitle">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: &quot;Pretendard&quot;;
+font-size: 24px;
+font-weight: bold;
+       </string>
+      </property>
+      <property name="text">
+       <string>ROBOT CONTROL DASHBOARD</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_top">
+      <item>
+       <widget class="QGroupBox" name="groupSensor">
+        <property name="title">
+         <string>SENSOR MONITOR</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_sensor">
+         <item>
+          <widget class="QLabel" name="lblBatteryTitle">
+           <property name="text">
+            <string>Battery</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblBattery">
+           <property name="text">
+            <string>82%</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QProgressBar" name="progressBattery">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>82</number>
+           </property>
+           <property name="textVisible">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblDistanceTitle">
+           <property name="text">
+            <string>Distance</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblDistance">
+           <property name="text">
+            <string>1.42 m</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblMotorTempTitle">
+           <property name="text">
+            <string>Motor Temperature</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblMotorTemp">
+           <property name="text">
+            <string>38 °C</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupControl">
+        <property name="title">
+         <string>ROBOT CONTROL</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_control">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_mode">
+           <item>
+            <widget class="QLabel" name="lblModeTitle">
+             <property name="text">
+              <string>Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboMode">
+             <item>
+              <property name="text">
+               <string>MANUAL</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>AUTO</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_speed"/>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_control">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_forward">
+           <item>
+            <spacer name="horizontalSpacer_forward">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnForward">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>↑</string>
+             </property>
+             <property name="shortcut">
+              <string>Up</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_forward2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_direction">
+           <item>
+            <spacer name="horizontalSpacer_direction">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnLeft">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>←</string>
+             </property>
+             <property name="shortcut">
+              <string>Left</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnStop">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>🤖</string>
+             </property>
+             <property name="shortcut">
+              <string>Space</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnRight">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>→</string>
+             </property>
+             <property name="shortcut">
+              <string>Right</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_direction2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_backward">
+           <item>
+            <spacer name="horizontalSpacer_backward">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnBackward">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>↓</string>
+             </property>
+             <property name="shortcut">
+              <string>Down</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_backward2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupMap">
+      <property name="title">
+       <string>ROBOT MAP VIEW</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_map">
+       <item>
+        <widget class="QGraphicsView" name="graphicsViewMap">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="renderHints">
+          <set>QPainter::Antialiasing</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupStatus">
+      <property name="title">
+       <string>ROBOT STATUS</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_status">
+       <item>
+        <widget class="QLabel" name="lblState">
+         <property name="text">
+          <string>State : STOPPED</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblCommand">
+         <property name="text">
+          <string>Command : STOP</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblSafety">
+         <property name="text">
+          <string>Safety : NORMAL</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblReason">
+         <property name="text">
+          <string>Reason : NORMAL</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblObstacleDistance">
+         <property name="text">
+          <string>Distance : 1.42 m</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblSafeDistance">
+         <property name="text">
+          <string>Safe Margin : 0.80 m</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupLog">
+      <property name="title">
+       <string>LOG</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_log">
+       <item>
+        <widget class="QTextEdit" name="textLog">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>Robot system log...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSaveLogFile">
+         <property name="text">
+          <string>Save log file</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
